@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="70" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Set3" tilewidth="32" tileheight="32">
+  <image source="../../../ScrollerContent/Tiles/Set3.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Background1" width="70" height="20" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DMQ0AAAwDoLqbgfrXMhX9IKFJqqqqqursqY4+Zn4/tOAVAAA=
+  </data>
+ </layer>
+ <layer name="Background2" width="70" height="20" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2UwQ6AIAxDd0O9ofz/t7qLF0NENzZG7Et607XoaCKihbWyNgIXmbWzDlYZnOVPJOW7lrtsPf/JIytmftllyRk97srdw7urIvdB5GzADo8+8vSXzKs9Z30fWjl7+0vmlUbGGtr/OUMPSTLOcK5IePfS6B58i/ce9fCb5dt6g04AAAAQmRP/UAj64BUAAA==
+  </data>
+ </layer>
+ <layer name="Main" width="70" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+NlGAXYAC8UD1fARqY+BTTMRIEbFKlkDjWBAJn6xJGwKPWcM2gApeEyHMMEBCgJF3xhEkCmuYMFkBsuhNIJrMxghNKaZNozUIDccBmuIAyIwxkGZ7gMZB5MAOJEIJYaALtVgFgViY9cT8OwPAP+/OcAxI5A7ATEzkDsAmUTg3Gph4m7ArEbZV6kGhBjQK37ianrvIHYB4h9qYj9gNifet4aBaMAL2BmoF4/YBSgAlDYjtTwjAHi6IF2xCgYBaNgFAwDAAAlyT/D4BUAAA==
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="70" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3UQQ6AIAwF0X8PvVvvfwtYGi2RFhIizkvYw0CRJBOiss12b737+bLo4qPLu6Ouc/Um8GkmZi0qOnc2sLAO9/B0b/HXNtc/oNWgtw1vzEcXAADmKpbHJiTgFQAA
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="70" height="20">
+  <object name="StartPoint" type="StartPoint" x="1026" y="200" width="128" height="32"/>
+   <object name="ToSet" type="EntryPoint" x="400" y="64" width="128" height="32">
+     <properties>
+       <property name="EntryPointComponent.NextScene" value="TestLevel"/>
+     </properties>
+   </object>
+ </objectgroup>
+</map>

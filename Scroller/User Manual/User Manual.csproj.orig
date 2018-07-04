@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5A9150F-D725-4589-8158-8E85BBBEFBDF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>User_Manual</RootNamespace>
+    <AssemblyName>User Manual</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\browsexml.PNG" />
+    <Content Include="Images\browsexmlediting.PNG" />
+    <Content Include="Images\browsexmlempty.PNG" />
+    <Content Include="Images\browsexmltabs.PNG" />
+    <Content Include="Images\browsexml_colors.PNG" />
+    <Content Include="Images\browsexml_name.PNG" />
+    <Content Include="Images\browsexml_protectedfields.PNG" />
+    <Content Include="Images\browsexml_save.PNG" />
+    <Content Include="Images\browsexml_saveandreplace.PNG" />
+    <Content Include="Images\browsexml_saveandyes.PNG" />
+    <Content Include="Images\browsexml_see.png" />
+    <Content Include="Images\Capture.PNG" />
+    <Content Include="Images\sp_enterandplay.PNG" />
+    <Content Include="Images\sp_loadedimg.PNG" />
+    <Content Include="Images\sp_open.png" />
+    <Content Include="Images\sp_selectimg.PNG" />
+    <Content Include="Images\testa.PNG" />
+<<<<<<< HEAD
+    <Content Include="Images\workspace_resize.png" />
+=======
+    <Content Include="Images\wallpaper.jpg" />
+>>>>>>> 711f92ace14dfa09b69b6468c9e673aff1406654
+    <Content Include="MainPage.html" />
+    <Content Include="Pages\About.htm" />
+    <Content Include="Pages\Contact.htm" />
+    <Content Include="Pages\EntityEditing\BrowseXML.htm" />
+    <Content Include="Pages\EntityEditing\ResizingWorkspace.htm" />
+    <Content Include="Pages\EntityEditing\SaveXML.htm" />
+    <Content Include="Pages\EntityEditing\UsingControls.htm" />
+    <Content Include="Pages\PlayingGame.htm" />
+    <Content Include="Pages\SpritePreviewing.htm" />
+    <Content Include="Pages\Understanding.htm" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

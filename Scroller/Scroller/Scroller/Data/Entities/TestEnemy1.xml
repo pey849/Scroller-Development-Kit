@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Components="ScrollerEngine.Components" xmlns:Graphics="ScrollerEngine.Components.Graphics">
+  <Asset Type="Components:Entity">
+    <Components>
+      <Item Type="Components:JumpingAIComponent">
+        <IsAiEnabled>true</IsAiEnabled>
+        <UpdateOnlyOnScreen>true</UpdateOnlyOnScreen>
+        <ReactionRange>0 0</ReactionRange>
+        <Offset>0 0</Offset>
+        <EntitiesToSearchFor>Player</EntitiesToSearchFor>
+        <JumpDelay>0.5</JumpDelay>
+    </Item>
+      <Item Type="Components:MovementComponent">
+        <MoveSpeed>75</MoveSpeed>
+        <MoveAcceleration>1200</MoveAcceleration>
+        <JumpSpeed>500</JumpSpeed>
+      </Item>
+      <Item Type="Components:PhysicsComponent">
+        <GravityCoefficient>0.05</GravityCoefficient>
+        <HorizontalDragCoefficient>0.05</HorizontalDragCoefficient>
+        <TerminalVelocity>700</TerminalVelocity>
+      </Item>
+      <Item Type="Components:HealthComponent">
+        <MaxHealth>1</MaxHealth>
+        <IsInvincible>false</IsInvincible>
+      </Item>
+      <Item Type="Graphics:SpriteComponent">
+        <TextureName>Sprites/pizza</TextureName>
+        <ColorTint>FFFFFFFF</ColorTint>
+        <faAnimations />
+        <isMirrored>false</isMirrored>
+      </Item>
+      <Item Type="Components:ClassificationComponent">
+        <Classification>Enemy</Classification>
+      </Item>
+      <Item Type="Components:DamageCollisionComponent">
+        <Classification>Player</Classification>
+        <DisposeOnCollision>false</DisposeOnCollision>
+        <MinimumTriggerDelay>PT0S</MinimumTriggerDelay>
+        <Damage>9000</Damage>
+      </Item>
+      <Item Type="Components:DestroyableObjectComponent" />
+    </Components>
+    <Size>32 32</Size>
+    <CollisionBuffer>0 0</CollisionBuffer>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,245 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
+
+namespace ScrollerEngine.Components.Graphics
+{
+    /// <summary>
+    /// Used to manage the sprites and animation for an Entity.
+    /// </summary>
+    public class SpriteComponent : Component
+    {
+        //NOTE: This is all temp; Someone will need to devise a Sprite/Animation method thing.
+
+        private Texture2D _pixelDebug;
+        private Texture2D _Texture;
+        private string _TextureName = "";
+        private Color _Color = Color.White;
+        public Dictionary<string, AnimationFrame> faAnimations = new Dictionary<string, AnimationFrame>();
+        protected Vector2 _LastPosition;
+        private string _CurrentAnimation = null;
+        private int _Width = 1;
+        private int _Height = 1;
+        private bool isAnimating = true;
+        public bool isMirrored = false;
+        private Direction currentFacingDirection = Direction.Right;
+
+        /// <summary>
+        /// Gets the texture file/sprite map.
+        /// </summary>
+        public Texture2D Texture
+        {
+            get { return _Texture; }
+            set { _Texture = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the texture to load.
+        /// </summary>
+        public string TextureName
+        {
+            get { return _TextureName; }
+            set { _TextureName = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the Color of the sprite.
+        /// </summary>
+        public Color ColorTint
+        {
+            get { return _Color; }
+            set { _Color = value; }
+        }
+
+        /// <summary>
+        /// Return the width of a single animation frame.
+        /// </summary>
+        public int Width
+        {
+            get { return _Width; }
+        }
+
+        /// <summary>
+        /// Return the height of a single animation frame.
+        /// </summary>
+        public int Height
+        {
+            get { return _Height; }
+        }
+
+        /// <summary>
+        /// Return the bounding box surrounding the sprite frame.
+        /// </summary>
+        public Rectangle BoundingBox
+        {
+            get { return new Rectangle((int)Parent.Position.X, (int)Parent.Position.Y, Width, Height); }
+        }
+
+        /// <summary>
+        /// The AnimationFrame that is playing
+        /// </summary>
+        [ContentSerializerIgnore]
+        public AnimationFrame CurrentAnimationFrame
+        {
+            get 
+            { 
+                if (!string.IsNullOrEmpty(_CurrentAnimation))
+                    return faAnimations[_CurrentAnimation];
+                else
+                    return null;
+            }
+        }
+
+        [ContentSerializerIgnore]
+        public string CurrentAnimation
+        {
+            get { return _CurrentAnimation; }
+            set
+            {
+                if (faAnimations.ContainsKey(value))
+                {
+                    _CurrentAnimation = value;
+                    faAnimations[_CurrentAnimation].CurrentFrame = 0;
+                    faAnimations[_CurrentAnimation].LoopCount = 0;
+                }
+            }
+        }
+
+        [ContentSerializerIgnore]
+        public Rectangle HurtBox
+        {
+            get 
+            { 
+                Rectangle hurtbox = CurrentAnimationFrame.CurrentHurtBox;
+                hurtbox.Y += (int)Parent.Position.Y;
+                hurtbox.X += (int)Parent.Position.X;
+
+                return hurtbox;
+            }
+        }
+
+        protected override void OnInitialize()
+        {
+            this._Texture = ScrollerBase.Instance.GlobalContent.Load<Texture2D>(_TextureName);
+<<<<<<< HEAD
+            this._pixelDebug = ScrollerBase.Instance.GlobalContent.Load<Texture2D>("Sprites/pixel");
+            
+            var rnd = new Random();
+            var randomEntry = faAnimations.ElementAt(rnd.Next(0, faAnimations.Count));
+            _Width = randomEntry.Value.FrameWidth;
+            _Height = randomEntry.Value.FrameHeight;
+
+            AddAnimation("error", 0, 0, 1, 1, 0.2f, 1, 1);
+=======
+            AddAnimation("error", 0, 0, 32, 32, 0.2f, 1);
+>>>>>>> 4073e87d0ca3dafaf97db2dd2c0432ebf8c6e5f9
+            CurrentAnimation = "error";
+
+            GetAnimationWithName("error").IntializeAutomaticHurtBoxes(_Texture);
+            GetAnimationWithName("stand").IntializeAutomaticHurtBoxes(_Texture);
+            GetAnimationWithName("walk").IntializeAutomaticHurtBoxes(_Texture);
+            GetAnimationWithName("crouch").IntializeAutomaticHurtBoxes(_Texture);
+            GetAnimationWithName("jump_up").IntializeAutomaticHurtBoxes(_Texture);
+            GetAnimationWithName("jump_down").IntializeAutomaticHurtBoxes(_Texture);
+
+            base.OnInitialize();
+        }
+
+        public void InitializeDefaultAnimations()
+        {
+            TextureName = "Sprites/platformer_sprites_pixelized_0";
+            _Width = 64;
+            _Height = 64;
+            AddAnimation("walk", 256, 0, _Width, _Height, 0.08f, 8, 512);
+            AddAnimation("stand", 0, 0, _Width, _Height, 0.1f, 4, 512);
+            AddAnimation("crouch", 64, 320, _Width, _Height, 0.1f, 1, 512);
+            AddAnimation("jump_up", 256, 320, _Width, _Height, 0.1f, 1, 512);
+            AddAnimation("jump_down", 448, 320, _Width, _Height, 0.1f, 1, 512);
+            CurrentAnimation = "stand";
+        }
+
+        public void AddAnimation(string name, int X, int Y, int width, int height, float frameLength, int frameCount, int spriteMapWidth)
+        {
+            faAnimations.Add(name, new AnimationFrame(X, Y, width, height, frameCount, spriteMapWidth, frameLength));
+        }
+
+        public void AddAnimation(string name, int X, int Y, int width, int height, float frameLength, string nextAnim, int frameCount, int spriteMapWidth)
+        {
+            faAnimations.Add(name, new AnimationFrame(X, Y, width, height, frameCount, spriteMapWidth, frameLength, nextAnim));
+        }
+
+        protected AnimationFrame GetAnimationWithName(string name)
+        {
+            if (faAnimations.ContainsKey(name))
+                return faAnimations[name];
+            else
+                return null;
+        }
+
+        protected override void OnUpdate(GameTime gameTime)
+        {
+            if (isAnimating)
+            {
+                if (CurrentAnimationFrame == null)
+                {
+                    if (faAnimations.Count > 0)
+                    {
+                        string[] keys = new string[faAnimations.Count];
+                        faAnimations.Keys.CopyTo(keys, 0);
+                        CurrentAnimation = keys[0];
+                    }
+                    else
+                        return;
+                }
+
+                CurrentAnimationFrame.Update(gameTime);
+
+                if (!string.IsNullOrEmpty(CurrentAnimationFrame.NextAnimation))
+                {
+                    if (CurrentAnimationFrame.LoopCount > 0)
+                        CurrentAnimation = CurrentAnimationFrame.NextAnimation;
+                }
+            }
+
+            var pc = Parent.GetComponent<PlayerControlComponent>();
+            if (pc != null)
+            {
+                if (pc.prevDirection == Direction.Right)
+                    currentFacingDirection = Direction.Right;
+                else if (pc.prevDirection == Direction.Left)
+                    currentFacingDirection = Direction.Left;
+            }
+            base.OnUpdate(gameTime);
+        }
+
+        protected override void OnDraw()
+        {
+            base.OnDraw();
+            var spriteBatch = ScrollerBase.Instance.SpriteBatch;
+            var Parent = this.Parent;
+            SpriteEffects test = new SpriteEffects();
+
+            /* Recommend that sprite map simply have the left AND right animations, instead of utilising this mirroring function */
+            if (currentFacingDirection == Direction.Left && isMirrored)
+                test = SpriteEffects.FlipHorizontally;
+
+            spriteBatch.Draw(_pixelDebug, HurtBox, Color.Red);
+
+            Debugger.DrawContent("Hurtbox", HurtBox);
+
+            spriteBatch.Draw(Texture, Parent.Position,
+                CurrentAnimationFrame.CurrentFrameRectangle,
+                Color.White,
+                0.0f, 
+                Vector2.Zero,
+                1.0f,
+                test,
+                0.0f);
+        }
+
+    }
+}

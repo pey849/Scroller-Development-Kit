@@ -1,0 +1,15 @@
+*.opensdf
+*.sdf
+# git ignore file
+*.cache
+*.suo
+obj
+bin
+*.cachefile
+*.cachefile
+Scroller/Scroller/Scroller.csproj.Debug.cachefile
+Scroller/Scroller/Scroller.csproj.Debug.cachefile
+*/Thumbs.db
+Scroller/Scroller/Scroller.csproj.Debug.cachefile
+
+Scroller/Scroller.suo

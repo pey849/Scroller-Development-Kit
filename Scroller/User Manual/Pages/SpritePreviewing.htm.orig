@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+<<<<<<< HEAD
+		<title>Sprite Previewing</title>
+=======
+		<title>Preview Sprite</title>
+
+        <style type="text/css">
+            body{ background: url("../Images/wallpaper.jpg") no-repeat center center fixed;  background-size: cover; }
+        </style>
+
+>>>>>>> 711f92ace14dfa09b69b6468c9e673aff1406654
+	</head>
+	<body>
+	    <p>Click the select button in the Sprite details tab</p>
+        <p><img alt="" src="../../Images/sp_open.PNG" height="50%" width="50%" /></p>
+        <p>Load the Image you want to preview</p>
+        <p><img alt="" src="../../Images/sp_selectimg.PNG" height="50%" width="50%" /></p>
+        <p>You will notice that the sprite has now been loaded</p>
+        <p><img alt="" src="../../Images/sp_loadedimg.PNG" height="50%" width="50%" /></p>
+        <p>Now enter the required fields (The ones that were left blank in the image below are optional) and click the play button. To pause press the pause button, To stop press the stop button (this will reset the image and start it at the beginning).</p>
+        <p><img alt="" src="../../Images/sp_enterandplay.PNG" height="50%" width="50%" /></p>
+	</body>
+</html>

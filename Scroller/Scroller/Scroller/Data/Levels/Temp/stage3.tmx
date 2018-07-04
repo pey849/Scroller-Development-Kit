@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="20" tilewidth="32" tileheight="32">
+<tileset firstgid="10" name="Tile2" tilewidth="32" tileheight="32">
+  <image source="Tiles/map.png" width="640" height="320"/>
+ </tileset>
+ <layer name="Background1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OoQ0AIAxE0S4Amm1g/6moqEcW8V7yk5MXAQAAAAD/2tnpPgE8rWxkszZ0u0PabSsAGQAA
+  </data>
+ </layer>
+ <layer name="Main" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2WDQ6DIAxGezGPsDPY+59iIVFDDJS2Uvhke0nDousPzxG3E9FeiBalnFpoa0mfZyLN4dlvnqtZLfMh+6u58rhr1bXUQ/PnOVsIzzmB4C+fpbSebANn8YDgTzpPv+SPj+gJuj90kr/P7CFezIr+uBBRrOgvwSS7q123cvrLowfcqY5UP49ZRLw/mMbsaVQfid7+mOL2FVH3ab3//5dnoPtjsv9GPDleNtKdOel+K3dl7v543igXTBhzaIj2F1ETCY8/y3c1Nax9o+5remsimtG9Nb34trZy8/gCAYZAUgAZAAA=
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WQQoAIAhEUQ+o979Om1ZBRGEi+h+4FZxEEgEQxWYBANCZLVXdjzk98rvt0eW9blTOJGq2qvmdVN6dV2TyF/mii92ue/891alPVyq5M8x+M1XyZ5jJAA3KJawAGQAA
+  </data>
+ </layer>
+ <layer name="Foreground1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAwJcBSxPzAQAZAAA=
+  </data>
+ </layer>
+ <objectgroup name="EntryPoints" width="50" height="50">
+  <object name="StartPoint" type="StartPoint" x="224" y="608" width="32" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="2400" y="544" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="Set1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="p4" type="TestEnemy" x="1056" y="224" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="704" y="608" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy3" x="1312" y="608" width="32" height="32"/>
+  <object name="p4" type="TestEnemy3" x="480" y="608" width="32" height="32"/>
+  <object name="p4" type="TestEnemy" x="2208" y="32" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="1120" y="608" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="1568" y="608" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1856" y="128" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1760" y="608" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="2240" y="608" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy4" x="2016" y="352" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

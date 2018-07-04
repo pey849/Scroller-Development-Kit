@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="testTiles" tilewidth="32" tileheight="32">
+  <image source="../../../ScrollerContent/Tiles/testTiles.png" width="96" height="96"/>
+ </tileset>
+ <layer name="Background1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAODfAC7KO00QJwAA
+  </data>
+ </layer>
+ <layer name="Main" width="50" height="50">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TMQoAIQxFQcHC+9/YfmGbNeB3nYFAyrwirZ1r7D6giI4sOrLoyKIji44sN3f08ivW6cjy1tE/zE43/3kiHVnGY//DAAAAAABwpglH71vlECcAAA==
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="50" height="50">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3DAQYAQAgAsOr/j74vnChiYxEAAGyqRpiQHwEAAAAAAOCSB6PxZbQQJwAA
+  </data>
+ </layer>
+ <layer name="Foreground1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAODfAC7KO00QJwAA
+  </data>
+ </layer>
+ <objectgroup name="EntryPoints" width="50" height="50">
+  <object name="StartPoint" type="StartPoint" x="128" y="447" width="128" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="29" y="33" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="Set1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Objects" width="50" height="50">
+   <object name="p4" type="TestEnemy2" x="485" y="332" width="32" height="32"/>
+  <object name="p4" type="TestEnemy" x="746" y="430" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="450" y="427" width="32" height="32"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="testTiles" tilewidth="32" tileheight="32">
+  <image source="Tiles/map.png" width="96" height="96"/>
+ </tileset>
+ <tileset firstgid="10" name="Tile1" tilewidth="32" tileheight="32">
+  <image source="map.png" width="640" height="320"/>
+ </tileset>
+ <layer name="Background2" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA92W6w3DIAyEvQPtjt1/gvZPJMvy40xsoDnppJQQc3wxSgcRjZ9fDX4DHg2mprraGtdeLYazbBF2XQx38Fvdd51MV/GjB7Kr4EdAjQ5+FexO4Ler/3bxOo3fcPhov+X4zLcX4VjFhQpqSX4as2FcS17DqSGZeWyjrFwr+WnzJT+kB3mvcB6WLXn3MkJ6E33+zjvQGFn9NbsOl8Uvc2bluCdrXic/bus8o3mkNH5WPauuHM/Mi/LOnOmInXWWvflWbskvynl6/0l+0fcD5SdrXuLXd/aw0xq/yJyzJ7SWl+t0tl5GbX/Iucy+i3+ypcq6yPwqdnxNb31EM9x2KpuN7+f6n83vaddcH8fec0hGr3aHea7M/KgvKvJIncovs3Z39jtaze6J/gLniim3ABkAAA==
+  </data>
+ </layer>
+ <layer name="Background1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3OQQkAQAgAQWPYP8pZTB/XQYQZ2P9GAAAAAMC+/L2pll8AuK8BlGUz5AAZAAA=
+  </data>
+ </layer>
+ <layer name="Main" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+1YCw6CMAztKRc5B8gVRM8A3sEbSuMaa+mwuqWEhZc0lH3arnsdU4D6cHHwcXLwsRXuDj6Cg4+t4JG/JkqN8KrfWvPnxb9az8CjfnU8Ctnpo+RgT/XbznKD15rxeS5gr8204cE/XCfGOc7SRf0s+vhzVGyMsb9joo3tEjFge8/moj7Bax9y4HX+DbNc4XP9IN4ptxpSdXZV/Fjmt3HuHvhHQL5I3ozx/QY67wgpnsj1T8b5xEWZ/1/hff5RDVPcxMlvPEj1p/LCa3WAJf8GeJ8HOdji+0tnHYL4t1fg77da738eKMU/+g7t5S5UCrjeEv8hbJU/vv9rXAjwGWNguuUOEsRYTU/1ab5kPBZd2rHGtbYvWv5SdtbAbfCYeLvMlRzjiUY8reO19hLc1/YzwHJvUvvtDc5FC/7llRXWGtD0A/l4Au6Ld90AGQAA
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UQQqAIBAFUO8gXbzjdAjP1CYoQnfWpL0HH2RWAw4/JYB5lCMAfzdSH2638J5Sydf1vhW3B8+rdU2Pzhmpu2CJXiBAvrzXsC1OrT/IjTkwhx3T5SlMABkAAA==
+  </data>
+ </layer>
+ <layer name="Foreground1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAwJcBSxPzAQAZAAA=
+  </data>
+ </layer>
+ <objectgroup name="EntryPoints" width="50" height="50">
+  <object name="StartPoint" type="StartPoint" x="544" y="256" width="32" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="2368" y="448" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="Set1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="p4" type="TestEnemy" x="1024" y="224" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="928" y="544" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy3" x="1376" y="288" width="32" height="32"/>
+  <object name="p4" type="TestEnemy3" x="1696" y="320" width="32" height="32"/>
+  <object name="p4" type="TestEnemy" x="1824" y="224" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="1376" y="512" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="1696" y="480" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1536" y="512" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="2080" y="544" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="2272" y="544" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy4" x="2464" y="352" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

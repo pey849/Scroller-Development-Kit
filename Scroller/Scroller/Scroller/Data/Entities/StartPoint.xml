@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Components="ScrollerEngine.Components">
+  <Asset Type="Components:Entity">
+    <Components>
+      <Item Type="Components:PhysicsComponent">
+        <GravityCoefficient>0</GravityCoefficient>
+        <HorizontalDragCoefficient>0</HorizontalDragCoefficient>
+        <TerminalVelocity>700</TerminalVelocity>
+      </Item>
+      <Item Type="Scroller.Components.EntryPointComponent">
+        <Classification>Player</Classification>
+        <DisposeOnCollision>false</DisposeOnCollision>
+        <MinimumTriggerDelay>PT0S</MinimumTriggerDelay>
+		<IsEnabled>false</IsEnabled>
+      </Item>
+	</Components>
+    <Size>0 0</Size>
+    <CollisionBuffer>0 0</CollisionBuffer>
+  </Asset>
+</XnaContent>

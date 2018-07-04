@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="10" name="Tile1" tilewidth="32" tileheight="32">
+  <image source="Tiles/map.png" width="640" height="320"/>
+ </tileset>
+ <layer name="Background1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3SSwrAIAxF0SzIJbi4Lr2jgoMXjRV/cB+cUUOaBJOZJQAAAAAAAOBAdsAMt/qye45brbpfmd07z9iptV8kXl0Wyt7qu6rzZlM1tZ61f4zcrSc978ubObKr6ud5gj3/3K+VF15rr/0AGQAA
+  </data>
+ </layer>
+ <layer name="Background2" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2WSw6AIBBDPYYrP1fwc/9EL2YXElkqA9LRvqQJG8jQDhOa5n90UA8N0Phw7wTN0AKtectyQykPLLmwUOIOd89k6s1UH0rcoZYvmjM25MHFF2ZjTbz3kvK3kTP/OAuv1OynOAuGelJgmyce/ziCr48CytXG27my52Wtr4U2aD/XuWF9hwH2+oQQwhsHbON7pAAZAAA=
+  </data>
+ </layer>
+ <layer name="Main" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2UMQ7AIAhFuf/Y1UPYi7RnahiaWANqCFSG/5K/GKPwohABAAAAAAAQT20SxdlFW9tNpX98WJA8ZXLHZPaXiZ2OMv47CxncRTi0vI3iXEMEmrvd77CQ7g/zbM7IHwN3X4oSMEdzx7mD8rIyq6Q9lzGjsy3zcuSOcwSlddgiOZb2eN87q8WaKH9SL/19Uq8eNa049Or9ARpdqyAAGQAA
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UQQqAIBAFUO+/9CYdpM4kgasIgrFM5T34S0E+M5MSAHDnuKT3e9q70/1c7AvEzbw7W81K3LM+VpydJ9HZersn8w2MaK8h5uwu//2JDxTtOAEFABkAAA==
+  </data>
+ </layer>
+ <layer name="Foreground1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAwJcBSxPzAQAZAAA=
+  </data>
+ </layer>
+ <objectgroup name="EntryPoints" width="50" height="50">
+  <object name="StartPoint" type="StartPoint" x="64" y="448" width="32" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="2368" y="448" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="Set1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="p4" type="TestEnemy" x="1024" y="224" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="416" y="320" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy3" x="1184" y="608" width="32" height="32"/>
+  <object name="p4" type="TestEnemy3" x="1984" y="576" width="32" height="32"/>
+  <object name="p4" type="TestEnemy" x="1696" y="576" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="832" y="352" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="2336" y="128" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1888" y="512" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="2272" y="544" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1440" y="320" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy4" x="2496" y="384" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

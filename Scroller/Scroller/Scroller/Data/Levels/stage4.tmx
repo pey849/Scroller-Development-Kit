@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="80" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="testTiles" tilewidth="32" tileheight="32">
+  <image source="../../../Desktop/testTiles.png" width="96" height="96"/>
+ </tileset>
+ <tileset firstgid="10" name="Tile2" tilewidth="32" tileheight="32">
+  <image source="../map.png" width="640" height="320"/>
+ </tileset>
+ <layer name="Background1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UQQrAIAwEQD9W9It9jr8zBY+FerEVOwMLOQZCNiUAGJcj5esleJWbAzxbuStX3g3gzhE5I7Xnmmd2mZ7k7/wAO2vB2nvDABkAAA==
+  </data>
+ </layer>
+ <layer name="Main" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2V3Q2AIAyEGckB3BKcwTUJDyZNI/aHgA3tl1x8OaUcLaYUBEEQBAGHPODLSJ7I4Olt7wVIA8yM6h9v2Ta+cvU6bw3cd6N9SK3TY8UZzPj+qvwsYGVGLM4r9+71gDQD7PWc3U5o78Fd708JJen+Jdr3GrcRcfZ2AVng78y4GUq8s8D9Se3l8Z4LBNeV+mG9PT+eT6jRet9qp+qZnSPlO4zU21MFmQQieQAZAAA=
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="80" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3WsQ3AIBAEQRpxEa6VhkkcQECChIW4GekaeG3wpQAAwL+ebrer307zdkuU0t+qU7u9if5GmtvLfUkx+22Sfx5I1wCUJgNSABkAAA==
+  </data>
+ </layer>
+ <layer name="Foreground1" width="80" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ8HFAAAAAAAwJcBSxPzAQAZAAA=
+  </data>
+ </layer>
+ <objectgroup name="EntryPoints" width="50" height="50">
+  <object name="StartPoint" type="StartPoint" x="128" y="384" width="32" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="2432" y="448" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="Set1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="p4" type="TestEnemy" x="736" y="384" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="992" y="576" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy3" x="1376" y="288" width="32" height="32"/>
+  <object name="p4" type="TestEnemy3" x="1600" y="608" width="32" height="32"/>
+  <object name="p4" type="TestEnemy" x="1696" y="320" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="1280" y="480" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p4" type="TestEnemy" x="2016" y="448" width="32" height="32">
+   <properties>
+    <property name="BasicAIComponent.ReverseAtEdge" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1536" y="416" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="true"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="2176" y="608" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy2" x="1888" y="608" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+  <object name="p5" type="TestEnemy4" x="2272" y="128" width="32" height="32">
+   <properties>
+    <property name="ShooterAIComponent.UpdateOnlyOnScreen" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

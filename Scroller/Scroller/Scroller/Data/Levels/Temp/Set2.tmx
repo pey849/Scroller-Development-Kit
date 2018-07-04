@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="200" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Set3" tilewidth="32" tileheight="32">
+  <image source="../../../ScrollerContent/Tiles/Set3.png" width="320" height="320"/>
+ </tileset>
+ <layer name="Background1" width="200" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OoQ0AMAwDsLxYqf/fshMGSgIMzD1JhpMUHAAAAAAAAKDZFhwAAAAAAAAAAPh7Df1hIIA+AAA=
+  </data>
+ </layer>
+ <layer name="Background2" width="200" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3YSxLCIAyAYXZVdz52egY9hvfQ+9/BOKMbbcsADQnl/2aycloYEiJ0CCFsJLYSu4AWDYEcatlLHCSOEifjuSBPSg7ZS+uhncsea4V+aEOj1rT7IrWCWn5rrXY/ptbx1eO5AP+og3Hcx2zUXsvYePxnlstZQ+s9tfT4S72vdj1S//Ys+lLtvmhVZ9Z9BuXe9ZKaw9K899IXvZyDe9mn1t9QS57BPM01XUu+Wr+Pebu/Yl28139Mi/dX9hgwTWNPs+d8Iz+6Wj8H94786GJ9AXh3lrgk/vaQeCrPYW5eOe/z9Ox1JG6ZY8ZwDgamcU6Dd/dPAGNeci4GN4A+AAA=
+  </data>
+ </layer>
+ <layer name="Main" width="200" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2bsU7DMBCGDyoxZ0FlLMwsbHSDthstYoIV3v8lsNVYWI5tzvY5cdL/k34lhaq+qv4cN+rtiGjHyF7lYB0Pnsec18kJZ+xYWqqrlTpq1VP6WZXWxh3/hngc+5xU3gVzTIj02HOoq5U6Wqvlv7qkxu+Ix0blqj+aczubyHP0+TVzHABaguvHuiC3siUDMBq1/YAbYM7U9ANuAElWNNzX69Tcu9fyA26AJVDDD7gBloK0H3ADpDLFvomLpB9wAywNKT/gxjj41tlQQDkSfsCNZZPjW2jP1Mq+iUupH3BjPpRcay71elTiB9xIx52P9xSftxJrbcqeLOQB/IgDN8rRc2xNw7m2Iv/6M/Y+JMWPlu85SZLjx1zc4P42eQyMGz4/NK4joXlW8/s5rh9/fKp8UbofrbtxZ51z31sN3Llqz/3QXDNr8pRrMO6HnflW+aE0P1p3Q/NgnU/hB+69tsGLyiude6E6K3bvU+jvoefEktPXZfdj7T3Jeb3c8Utj86jy3Gfr5Gn4UYGJeCN/v1RH8X4o9zEnuf1YJ+voZozeMqlxDKY/M4T+3wdycfkF5d2Y7oA+AAA=
+  </data>
+ </layer>
+ <layer name="PassThroughable" width="200" height="20">
+  <properties>
+   <property name="IsSolid" value="true"/>
+   <property name="TopCollisionOnly" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3BAQEAAACAkP6v7ggKAAAAAAAAAAAAAAAAAAAAao3nfFeAPgAA
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="200" height="20">
+  <object name="StartPoint" type="StartPoint" x="521" y="404" width="128" height="32"/>
+  <object name="ToSet" type="EntryPoint" x="9" y="18" width="128" height="32">
+   <properties>
+    <property name="EntryPointComponent.NextScene" value="TestLevel"/>
+   </properties>
+  </object>
+  <object name="Enemy1" type="TestEnemy" x="1488" y="533" width="68" height="39"/>
+  <object name="Enemy1" type="TestEnemy" x="3395" y="413" width="68" height="39"/>
+  <object name="Enemy1" type="TestEnemy" x="3154" y="262" width="68" height="39"/>
+  <object name="Enemy1" type="TestEnemy" x="4579" y="300" width="68" height="39"/>
+  <object name="Enemy1" type="TestEnemy" x="3154" y="262" width="68" height="39"/>
+  <object name="Enemy4" type="TestEnemy2" x="2949" y="364" width="68" height="39"/>
+ </objectgroup>
+</map>
